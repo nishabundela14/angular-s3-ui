@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <h1>
+      My Angular store
+    </h1>
+    <button mat-button routerLink="/home">Home</button>
+    <button mat-button routerLink="/home/about">About</button>
+    <button mat-button (click)="logoutApps()">Logout</button>
+  </mat-toolbar>
+  <div>
+    <div style="width:20%; float:left">
+        <router-outlet name="sidebar"></router-outlet>
+      </div>
+    
+    <div style="width:78%; float:left">
+            <router-outlet #test="outlet"></router-outlet>
+    </div>
+  </div>
