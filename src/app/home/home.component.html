@@ -4,7 +4,7 @@
     <mat-card *ngFor="let items of productList" style="margin-top:10px;">
         <mat-card-header>
             <mat-card-title>
-                <a [routerLink]="['/product-details',items.name]">{{items.name}}</a>
+                <a [routerLink]="['/home/product-details',items.name]">{{items.name}}</a>
             </mat-card-title>
             <mat-card-subtitle>
                 {{items.price}}$/ {{items.quantity}}

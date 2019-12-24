@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
@@ -9,6 +9,9 @@ import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpsInterceptorService } from './interceptor/https.interceptor.service';
+import { LoginComponent} from './login/login.component';
+import { AdminComponent} from './admin/admin.component';
+import { SidebarComponent} from './sidebar/sidebar.component';
 
 import { MatToolbarModule,
 MatIconModule,
@@ -20,7 +23,10 @@ MatProgressSpinnerModule} from '@angular/material';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent,
+    AdminComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,9 @@ MatProgressSpinnerModule} from '@angular/material';
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
