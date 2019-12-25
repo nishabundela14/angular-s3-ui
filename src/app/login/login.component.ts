@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import { User } from '../interface/user';
 import { AuthService} from '../Api/auth.service'
+import { MessageService } from '../Api/message.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   public isSubmitted: boolean = false;
   constructor( private auth: AuthService,
     private router: Router,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private mess: MessageService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -37,6 +39,8 @@ export class LoginComponent implements OnInit {
 
     this.auth.loginApp(this.loginForm.value);
     this.router.navigateByUrl('/home');
+    this.mess.sendMessage(true);
+    this.mess.clearMessage();
   }
 
 }

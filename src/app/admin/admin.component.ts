@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../Api/auth.service';
 import { Router } from '@angular/router';
+import { MessageService } from '../Api/message.service';
 
 @Component({
   selector: 'app-admin',
@@ -9,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService,
+     private router: Router,
+     private mess: MessageService) { }
 
   ngOnInit() {
   }
@@ -17,6 +20,7 @@ export class AdminComponent implements OnInit {
   public logoutApps() {
     this.auth.logoutApp();
     this.router.navigateByUrl("/login");
+    this.mess.sendMessage(false);
   }
 
 }

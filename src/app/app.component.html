@@ -6,7 +6,7 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" *ngIf="isLoggedIn === false">
   <h1>
     My Angular store
   </h1>
